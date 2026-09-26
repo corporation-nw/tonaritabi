@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LINEで友だち追加｜となり旅 by NW</title>
+<meta name="description" content="となり旅 by NWのLINE公式アカウント。友だち追加で「はじめての台湾 入国準備チェックリスト」をお届けします。">
+<!-- SNSからの中継専用ページ。検索結果には出さない -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<style>
+  /* 色は3つだけ。自分のサイトに合わせて変える */
+  :root { --bg: #F8F5EF; --ink: #1C2A2D; --accent: #1D7A86; --muted: #4A5A5D; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; min-height: 100svh; display: grid; place-items: center;
+    background: var(--bg); color: var(--ink);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif; }
+  .lp { width: 100%; max-width: 420px; padding: 48px 20px; text-align: center; }
+  .lp__brand { font-size: 13px; letter-spacing: .08em; color: var(--muted); margin: 0 0 28px; }
+  .lp__title { font-size: 26px; line-height: 1.5; font-weight: 700; margin: 0 0 16px; }
+  .lp__gift { font-size: 15px; line-height: 1.8; margin: 0 0 36px; }
+  .lp__gift strong { border-bottom: 2px solid var(--accent); }
+  .lp__btn { display: block; width: 100%; padding: 18px 16px; border-radius: 999px; background: var(--accent);
+    color: var(--bg); font-size: 17px; font-weight: 700; text-decoration: none; letter-spacing: .04em; }
+  .lp__btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .lp__note { font-size: 12px; line-height: 1.8; color: var(--muted); margin: 24px 0 0; }
+</style>
+</head>
+<body>
+
+<main class="lp">
+  <p class="lp__brand">となり旅 by NW</p>
+  <h1 class="lp__title">海の向こうの、まだ知らない日常へ。</h1>
+  <p class="lp__gift">台湾の旅を準備している、となり旅の公式LINEです。<br>友だち追加で<br><strong>「はじめての台湾 入国準備チェックリスト」</strong><br>を受け取れます。</p>
+
+  <!-- ボタンは line.me へ直接つなぐ（トラッキングリンクを経由させない。アプリの切り替えが不安定になるため） -->
+  <a class="lp__btn" id="line-add" href="https://line.me/R/ti/p/@689irgyd">LINEで友だち追加</a>
+
+  <p class="lp__note">開かないときは、右上の「…」から<br>「ブラウザで開く」を選んでください。<br>LINE ID：@689irgyd</p>
+</main>
+
+<script>
+  // Google アナリティクス（gtag）を入れているサイトなら、ボタンのタップを記録する。無ければ何もしない
+  document.getElementById('line-add').addEventListener('click', function () {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'line_add_click', { source: new URLSearchParams(location.search).get('src') || 'direct' });
+    }
+  });
+</script>
+</body>
+</html>
