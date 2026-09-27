@@ -111,6 +111,17 @@ svg { flex-shrink: 0; }
 .scene p { font-size: 13px; line-height: 1.8; color: var(--ink-2); }
 .scenes + .note { margin-top: 32px; }
 
+/* Season (autumn) */
+.season { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.season__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
+.season__item { display: flex; flex-direction: column; gap: 10px; margin: 0; }
+.season__item img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+.season__item--wide { grid-column: 1 / -1; }
+.season__item--wide img { height: 240px; }
+.season__item--tall img { height: 260px; }
+.season__item figcaption { font-size: 13px; line-height: 1.8; color: var(--ink-2); }
+.season__grid + .note { margin-top: 32px; }
+
 /* For whom */
 .whom { display: flex; flex-direction: column; border-bottom: 1px solid var(--line); }
 .whom__item { display: flex; flex-direction: column; gap: 8px; padding: 22px 0; border-top: 1px solid var(--line); }
@@ -210,6 +221,14 @@ svg { flex-shrink: 0; }
   .scene h3 { font-size: 22px; }
   .scene p { font-size: 14px; line-height: 1.9; }
   .scenes + .note { margin-top: 56px; }
+
+  .season__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 260px; gap: 24px; }
+  .season__item { min-height: 0; }
+  .season__item img { flex: 1 1 auto; height: auto; min-height: 0; }
+  .season__item--wide { grid-column: span 2; grid-row: span 2; }
+  .season__item--tall { grid-row: span 2; }
+  .season__item figcaption { font-size: 14px; }
+  .season__grid + .note { margin-top: 56px; }
 
   .whom-grid { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 80px; }
   .whom-grid .section__head { margin-bottom: 0; }
